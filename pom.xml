@@ -20,98 +20,8 @@
     <!-- Spring -->
     <dependency>
       <groupId>org.springframework</groupId>
-      <artifactId>spring-jdbc</artifactId>
-      <version>${spring.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.springframework</groupId>
-      <artifactId>spring-aop</artifactId>
-      <version>${spring.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.springframework</groupId>
-      <artifactId>spring-web</artifactId>
-      <version>${spring.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.springframework</groupId>
       <artifactId>spring-webmvc</artifactId>
       <version>${spring.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.springframework</groupId>
-      <artifactId>spring-context-support</artifactId>
-      <version>${spring.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.springframework</groupId>
-      <artifactId>spring-beans</artifactId>
-      <version>${spring.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.springframework</groupId>
-      <artifactId>spring-context</artifactId>
-      <version>${spring.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.springframework</groupId>
-      <artifactId>spring-core</artifactId>
-      <version>${spring.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.springframework</groupId>
-      <artifactId>spring-orm</artifactId>
-      <version>${spring.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.springframework</groupId>
-      <artifactId>spring-test</artifactId>
-      <version>${spring.version}</version>
-    </dependency>
-    <!-- junit and mockito -->
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>${junit.version}</version>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.mockito</groupId>
-      <artifactId>mockito-all</artifactId>
-      <version>${mockito.version}</version>
-      <scope>test</scope>
-    </dependency>
-    <!-- Jackson -->
-    <dependency>
-      <groupId>org.codehaus.jackson</groupId>
-      <artifactId>jackson-core-asl</artifactId>
-      <version>${jackson.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.codehaus.jackson</groupId>
-      <artifactId>jackson-mapper-asl</artifactId>
-      <version>${jackson.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.codehaus.jackson</groupId>
-      <artifactId>jackson-jaxrs</artifactId>
-      <version>${jackson.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.codehaus.jackson</groupId>
-      <artifactId>jackson-xc</artifactId>
-      <version>${jackson.version}</version>
-    </dependency>
-    <!-- Derby database -->
-    <dependency>
-      <groupId>org.apache.derby</groupId>
-      <artifactId>derby</artifactId>
-      <version>10.4.2.0</version>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.derby</groupId>
-      <artifactId>derbyclient</artifactId>
-      <version>10.4.2.0</version>
     </dependency>
     <!-- Servlet -->
     <dependency>
@@ -119,27 +29,10 @@
       <artifactId>servlet-api</artifactId>
       <version>2.5</version>
     </dependency>
-    <!-- Joda Time -->
-    <dependency>
-      <groupId>joda-time</groupId>
-      <artifactId>joda-time</artifactId>
-      <version>2.7</version>
-    </dependency>
-    <dependency>
-      <groupId>org.liquibase</groupId>
-      <artifactId>liquibase-core</artifactId>
-      <version>3.3.2</version>
-    </dependency>
-    <!-- Jawr -->
-    <dependency>
-      <groupId>net.jawr</groupId>
-      <artifactId>jawr-core</artifactId>
-      <version>3.8</version>
-    </dependency>
   </dependencies>
 
   <build>
-    <finalName>SpringWebDemo</finalName>
+    <finalName>spring-mvc-example</finalName>
     <plugins>
       <!-- Jetty -->
       <plugin>
@@ -148,33 +41,6 @@
         <version>9.3.0.M1</version>
         <configuration>
           <scanIntervalSeconds>5</scanIntervalSeconds>
-        </configuration>
-      </plugin>
-      <!-- Liquibase -->
-      <plugin>
-        <groupId>org.liquibase</groupId>
-        <artifactId>liquibase-maven-plugin</artifactId>
-        <version>3.3.2</version>
-        <configuration>
-          <changeLogFile>${basedir}/src/main/resources/liquibase/master.xml</changeLogFile>
-          <driver>org.apache.derby.jdbc.ClientDriver</driver>
-          <url>jdbc:derby://localhost:1527/testdb;create=true</url>
-          <username>app</username>
-          <password>app</password>
-        </configuration>
-      </plugin>
-      <!-- In memory DB plugin -->
-      <plugin>
-        <groupId>com.btmatthews.maven.plugins.inmemdb</groupId>
-        <artifactId>inmemdb-maven-plugin</artifactId>
-        <version>1.4.3</version>
-        <configuration>
-          <monitorPort>11527</monitorPort>
-          <monitorKey>inmemdb</monitorKey>
-          <type>derby</type>
-          <database>testdb</database>
-          <username>app</username>
-          <password>app</password>
         </configuration>
       </plugin>
       <!-- Jetty runner -->
