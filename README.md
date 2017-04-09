@@ -1,4 +1,4 @@
-## Spring 4 MVC Hello World Example
+## Spring 4 MVC Hello World XML Config Example
 
 - build the project: `mvn clean install`
 - run the application: `mvn jetty:run`
